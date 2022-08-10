@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer'); //requiero multer,middleware maneja data para subir archivos.
 const path = require('path'); //requiero modulo path para usar el metodo join() para unir dos rutas
+const fs = require('fs'); // requiero fs para leer el archivo y poder mandarlo a la base de datos
 
 const router = express.Router();
 
@@ -21,8 +22,25 @@ router.get('/', (req, res) => {
 });
 
 router.post('/images/post', fileUpload, (req, res) => {
-  console.log(req.file);
-  res.send('PicUp!');
+  req.getConnection((err, conn) => {
+    if (err) return res.status(500).send('server error'); // valido si hay algun error
+
+    const type = req.file.mimetype; //guardo el tipo de archivo
+    const name = req.file.originalname; //guardo el nombre del archivo
+    const data = fs.readFileSync(
+      path.join(__dirname, '../images/' + req.file.filename)
+    ); //leo el archivo y lo guardo en la constante data
+
+    conn.query(
+      'INSERT INTO image set ?',
+      [{ type, name, data }],
+      (err, rows) => {
+        if (err) return res.status(500).send('server error');
+
+        res.send('Pic saved!');
+      }
+    ); //realizo la conexion mediante una query
+  });
 });
 
 module.exports = router;
