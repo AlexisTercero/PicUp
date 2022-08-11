@@ -43,4 +43,25 @@ router.post('/images/post', fileUpload, (req, res) => {
   });
 });
 
+router.get('/images/get', (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.status(500).send('server error'); // valido si hay algun error
+
+    conn.query('SELECT * FROM image', (err, rows) => {
+      if (err) return res.status(500).send('server error');
+
+      rows.map((img) => {
+        fs.writeFileSync(
+          path.join(__dirname, '../dbimages/' + img.id + 'PicUp.png'),
+          img.data
+        );
+      }); //mapeo las imagenes de la base de datos y las guardo en una carpeta temporal.
+
+      const imagedir = fs.readdirSync(path.join(__dirname, '../dbimages/')); //leo los archivos de la carpeta temporal y guardo ese array en una constante
+
+      res.json(imagedir);
+    }); //realizo la conexion mediante una query
+  });
+});
+
 module.exports = router;
