@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 function UploadForm() {
   const [file, setFile] = useState(null);
+  const [listUpdated, setlistUpdated] = useState(false);
 
   const selectedHandler = (e) => {
     setFile(e.target.files[0]);
@@ -22,7 +23,10 @@ function UploadForm() {
       body: formdata,
     })
       .then((res) => res.text())
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        setlistUpdated(true);
+      })
       .catch((err) => {
         console.error(err);
       }); //envio la data al servidor
