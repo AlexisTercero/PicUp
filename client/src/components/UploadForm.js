@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
-function UploadForm() {
+function UploadForm(props) {
   const [file, setFile] = useState(null);
-  const [listUpdated, setlistUpdated] = useState(false);
 
   const selectedHandler = (e) => {
     setFile(e.target.files[0]);
@@ -25,7 +24,7 @@ function UploadForm() {
       .then((res) => res.text())
       .then((res) => {
         console.log(res);
-        setlistUpdated(true);
+        props.setListUpdated(true); //cambio el estado de la lista de imagenes a true, viene por props desde App.js
       })
       .catch((err) => {
         console.error(err);

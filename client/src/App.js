@@ -5,11 +5,15 @@ import Images from './components/Images';
 import './App.css';
 
 function App() {
+  const [listUpdated, setListUpdated] = useState(false); //estado para actualizar la lista de imagenes a mostrar en pantalla
   return (
     <Fragment>
       <NavBar></NavBar>
-      <UploadForm></UploadForm>
-      <Images></Images>
+      <UploadForm setListUpdated={setListUpdated}></UploadForm>
+      <Images
+        listUpdated={listUpdated}
+        setListUpdated={setListUpdated}
+      ></Images>
     </Fragment>
   );
 }

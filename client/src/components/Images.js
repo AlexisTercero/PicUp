@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
-function Images() {
+function Images(props) {
   const [imageList, setImageList] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,8 @@ function Images() {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
+    props.setListUpdated(false); //reseteo a false el estado de la lista de imagenes luego de ejecutar el useEffect
+  }, [props.listUpdated]); //el useEffect espera cambios en el estado de la lista de imagenes para ejecutarse
 
   return (
     <div
