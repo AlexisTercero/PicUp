@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 function Images(props) {
   const [imageList, setImageList] = useState([]);
   const [modalIsOpen, setmodalIsOpen] = useState(false); //state para manejar el modal de apertura de imagenes
+  const [currentImage, setcurrentImage] = useState(null); //state para asignar la imagen que debe abrirse en el modal
 
   useEffect(() => {
     Modal.setAppElement('body'); //seteo el modal atandolo a body
@@ -17,6 +18,11 @@ function Images(props) {
       });
     props.setListUpdated(false); //reseteo a false el estado de la lista de imagenes luego de ejecutar el useEffect
   }, [props.listUpdated]); //el useEffect espera cambios en el estado de la lista de imagenes para ejecutarse
+
+  const modalHandler = (isOpen, image) => {
+    setmodalIsOpen(isOpen);
+    setcurrentImage(image);
+  }; //funcion para manejar la apertura del modal y asignar la imagen correspondiente
 
   return (
     <Fragment>
@@ -38,7 +44,7 @@ function Images(props) {
             ></img>
             <div className="card-body">
               <button
-                onClick={() => setmodalIsOpen(true)} //el state cambia a true para que se abra el Modal cuando se hace click
+                onClick={() => modalHandler(true, image)} //el state cambia a true para que se abra el Modal  y se asigna la imagen cuando se hace click
                 className="btn btn-dark"
               >
                 Open
@@ -47,9 +53,12 @@ function Images(props) {
           </div>
         ))}
       </div>
-      <Modal isOpen={modalIsOpen} onRequestClose={() => setmodalIsOpen(false)}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => modalHandler(false, null)}
+      >
         <div className="card">
-          <img />
+          <img src={'http://localhost:9000/' + currentImage} alt="..." />
           <div className="card-body">
             <button className="btn btn-danger">X</button>
           </div>
