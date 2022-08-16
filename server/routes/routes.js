@@ -64,7 +64,7 @@ router.get('/images/get', (req, res) => {
   });
 });
 
-router.delete('/images/delete/:ide', (req, res) => {
+router.delete('/images/delete/:id', (req, res) => {
   req.getConnection((err, conn) => {
     if (err) return res.status(500).send('server error'); // valido si hay algun error
 

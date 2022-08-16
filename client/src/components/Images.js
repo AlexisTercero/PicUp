@@ -4,8 +4,8 @@ import Modal from 'react-modal';
 
 function Images(props) {
   const [imageList, setImageList] = useState([]);
-  const [modalIsOpen, setmodalIsOpen] = useState(false); //state para manejar el modal de apertura de imagenes
   const [currentImage, setcurrentImage] = useState(null); //state para asignar la imagen que debe abrirse en el modal
+  const [modalIsOpen, setmodalIsOpen] = useState(false); //state para manejar el modal de apertura de imagenes
 
   useEffect(() => {
     Modal.setAppElement('body'); //seteo el modal atandolo a body
@@ -24,6 +24,21 @@ function Images(props) {
     setcurrentImage(image);
   }; //funcion para manejar la apertura del modal y asignar la imagen correspondiente
 
+  const deleteHandler = () => {
+    let imageID = currentImage.split('P');
+    imageID = parseInt(imageID[0]);
+
+    console.log(imageID);
+
+    fetch('http://localhost:9000/images/delete/' + imageID, {
+      method: 'DELETE',
+    })
+      .then((res) => res.text())
+      .then((res) => console.log(res));
+    setmodalIsOpen(false);
+    props.setListUpdated(true);
+  };
+
   return (
     <Fragment>
       <div
@@ -40,7 +55,7 @@ function Images(props) {
               src={'http://localhost:9000/' + image}
               alt="..."
               className="card-img-top"
-              style={{ height: '200px', maxwidth: '300px' }}
+              style={{ maxHeight: '200px', maxWidth: '200px' }}
             ></img>
             <div className="card-body">
               <button
@@ -54,13 +69,43 @@ function Images(props) {
         ))}
       </div>
       <Modal
+        style={{
+          content: {
+            height: '800px',
+            backgroundColor: 'black',
+            left: '20%',
+            right: '20%',
+          },
+        }}
         isOpen={modalIsOpen}
         onRequestClose={() => modalHandler(false, null)}
       >
-        <div className="card">
-          <img src={'http://localhost:9000/' + currentImage} alt="..." />
-          <div className="card-body">
-            <button className="btn btn-danger">X</button>
+        <div
+          style={{
+            backgroundColor: 'red',
+          }}
+          className="card"
+        >
+          <img
+            src={'http://localhost:9000/' + currentImage}
+            alt="..."
+            style={{
+              margin: '0 auto',
+              height: 'auto',
+              width: 'auto',
+              maxHeight: '100%',
+              maxWidth: '100%',
+            }}
+          />
+          <div
+            style={{
+              backgroundColor: 'red',
+            }}
+            className="card-body"
+          >
+            <button onClick={() => deleteHandler()} className="btn btn-danger">
+              DELETE
+            </button>
           </div>
         </div>
       </Modal>
