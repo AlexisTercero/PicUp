@@ -64,4 +64,24 @@ router.get('/images/get', (req, res) => {
   });
 });
 
+router.delete('/images/delete/:ide', (req, res) => {
+  req.getConnection((err, conn) => {
+    if (err) return res.status(500).send('server error'); // valido si hay algun error
+
+    conn.query(
+      'DELETE FROM image WHERE id = ?',
+      [req.params.id], //elimino imagen de la base de datos
+      (err, rows) => {
+        if (err) return res.status(500).send('server error');
+
+        fs.unlinkSync(
+          path.join(__dirname, '../dbimages/' + req.params.id + 'PicUp.png')
+        ); //elimino imagen de la carpeta temporal dbimages
+
+        res.send('image deleted');
+      }
+    );
+  });
+});
+
 module.exports = router;

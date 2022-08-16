@@ -24,7 +24,7 @@ function UploadForm(props) {
       .then((res) => res.text())
       .then((res) => {
         console.log(res);
-        props.setListUpdated(true); //cambio el estado de la lista de imagenes a true, viene por props desde App.js
+        props.setListUpdated(true); //cambio el estado de la lista de imagenes a true luego de ser actualizada, viene por props desde App.js
       })
       .catch((err) => {
         console.error(err);
