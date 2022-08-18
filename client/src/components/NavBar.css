@@ -57,7 +57,7 @@ input[type='file'] {
 .custom-file-upload {
   width: 140px;
   color: rgb(209, 209, 209);
-  border: 1px solid rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
@@ -67,6 +67,7 @@ input[type='file'] {
 .btn-up {
   width: 60px;
   background-color: white;
+  border: 2px solid rgb(255, 255, 255);
   color: black;
   font-weight: bold;
   border-radius: 0 30px 30px 0px;
