@@ -1,6 +1,7 @@
 import React from 'react';
 import { Fragment, useState, useEffect } from 'react';
 import Modal from 'react-modal';
+import './Images.css';
 
 function Images(props) {
   const [imageList, setImageList] = useState([]);
@@ -42,7 +43,7 @@ function Images(props) {
   return (
     <Fragment>
       <div
-        className="container mt-3"
+        className="divimgs container "
         style={{
           display: 'flex',
           flexWrap: 'wrap',

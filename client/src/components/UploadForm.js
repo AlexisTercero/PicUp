@@ -35,7 +35,7 @@ function UploadForm(props) {
     setFile(null); // reseteo el State a null para que no quede ocupado por la imagen.
   };
   return (
-    <div className="container mt-5">
+    <form className="container mt-5">
       <div className="card p-3">
         <div className="row">
           <div className="col-10">
@@ -58,7 +58,7 @@ function UploadForm(props) {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
 
