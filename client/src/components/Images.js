@@ -42,30 +42,23 @@ function Images(props) {
 
   return (
     <Fragment>
-      <div
-        className="divimgs container "
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-        }}
-      >
+      <div className="divimgs">
         {imageList.map((image) => (
-          <div key={image} className="card m-2">
+          <div key={image} className="imgcontainer">
             <img
               src={'http://localhost:9000/' + image}
               alt="..."
-              className="card-img-top"
-              style={{ maxHeight: '200px', maxWidth: '200px' }}
+              className="pic"
+              onClick={() => modalHandler(true, image)} //el state cambia a true para que se abra el Modal  y se asigna la imagen cuando se hace click
             ></img>
-            <div className="card-body">
+            {/* <div className="card-body">
               <button
                 onClick={() => modalHandler(true, image)} //el state cambia a true para que se abra el Modal  y se asigna la imagen cuando se hace click
                 className="btn btn-dark"
               >
                 Open
               </button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>
