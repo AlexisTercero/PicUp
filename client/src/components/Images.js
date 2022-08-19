@@ -44,7 +44,7 @@ function Images(props) {
     <Fragment>
       <div className="divimgs">
         {imageList.map((image) => (
-          <div key={image} className="imgcontainer">
+          <div key={image}>
             <img
               src={'http://localhost:9000/' + image}
               alt="..."

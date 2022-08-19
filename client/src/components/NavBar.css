@@ -8,8 +8,17 @@
   margin: 0px;
   padding: 0px;
   background-color: black;
-  box-shadow: 2px 3px 6px #2a2a2a78;
+  box-shadow: 0px 0px 10px 1px #2a2a2a29;
   z-index: +1;
+}
+
+#navmenu div {
+  display: flex;
+  align-items: center;
+}
+.contenedorNav {
+  justify-content: space-between;
+  width: 935px;
 }
 
 a#logo {
@@ -18,13 +27,9 @@ a#logo {
   padding: 0;
   margin-top: 12px;
   margin-bottom: 8px;
+  margin-left: -2px;
   min-width: 150px;
   width: 240px;
-}
-
-#navmenu div {
-  display: flex;
-  align-items: center;
 }
 
 input[type='file'] {
@@ -57,10 +62,18 @@ input[type='file'] {
   box-shadow: 3px 0px 5px 3px #2a2a2a78;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1020px) {
+  .contenedorNav {
+    width: 704px;
+  }
+}
+
+@media (max-width: 710px) {
   #navmenu {
-    flex-direction: column;
     height: 200px;
+  }
+  .contenedorNav {
+    flex-direction: column;
     justify-content: center;
   }
 }

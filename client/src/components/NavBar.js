@@ -36,28 +36,34 @@ function NavBar(props) {
     setFile(null); // reseteo el State a null para que no quede ocupado por la imagen.
   };
   return (
-    <div className="contenedor">
+    <div>
       <nav id="navmenu">
-        <a href="/" id="logo">
-          <img src="/images/logo-picup.svg" alt=" logo" />
-        </a>
-        <form>
-          <div>
-            <label className="custom-file-upload">
-              <input
-                id="fileinput"
-                onChange={selectedHandler}
-                className="form-control"
-                type="file"
-                accept="image/*"
-              />
-              Pic...
-            </label>
-            <button onClick={sendHandler} type="button" className="btn btn-up">
-              Up!
-            </button>
-          </div>
-        </form>
+        <div className="contenedorNav">
+          <a href="/" id="logo">
+            <img src="/images/logo-picup.svg" alt=" logo" />
+          </a>
+          <form>
+            <div>
+              <label className="custom-file-upload">
+                <input
+                  id="fileinput"
+                  onChange={selectedHandler}
+                  className="form-control"
+                  type="file"
+                  accept="image/*"
+                />
+                Pic...
+              </label>
+              <button
+                onClick={sendHandler}
+                type="button"
+                className="btn btn-up"
+              >
+                Up!
+              </button>
+            </div>
+          </form>
+        </div>
       </nav>
     </div>
   );

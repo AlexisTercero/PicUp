@@ -26,8 +26,7 @@ function App() {
 }
 
 const Contenedor = styled.div`
-  max-width: 60vw;
-  margin: 3vh auto;
+  margin: 3vh auto 7vh;
   flex: 1;
   @media (max-width: 600px) {
     max-width: 300px;

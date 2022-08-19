@@ -30,27 +30,37 @@ const Foot = styled.div`
   font-size: 13px;
   font-weight: bolder;
   letter-spacing: 0.5px;
-  box-shadow: 0px 9px 12px #2a2a2a78;
+
   background-color: black;
-  backdrop-filter: blur(15px);
   padding-top: 0.3em;
   padding-left: 9px;
   padding-right: 9px;
   position: relative;
   bottom: 0;
-  min-width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   height: 50px;
+  position: fixed;
+  box-shadow: 0px 0px 10px 1px #2a2a2a29;
+
   @media (max-width: 500px) {
     font-size: 10px;
   }
 `;
 
 const Row = styled.footer`
+  width: 935px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  @media (max-width: 1020px) {
+    width: 704px;
+  }
+  @media (max-width: 710px) {
+    width: 400px;
+  }
 `;
 const Colimg = styled.div`
   width: 27px;
