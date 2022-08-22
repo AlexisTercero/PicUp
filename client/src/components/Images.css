@@ -37,6 +37,13 @@
 }
 
 @media (max-width: 710px) {
+  .divimg {
+    width: 33%;
+  }
+
+  .pic {
+    width: -webkit-fill-available;
+  }
   .divimgs {
     margin-top: 220px;
     gap: 3px;

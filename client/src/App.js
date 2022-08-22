@@ -26,10 +26,13 @@ function App() {
 }
 
 const Contenedor = styled.div`
+  width: 935px;
   margin: 3vh auto 7vh;
   flex: 1;
+  @media (max-width: 1020px) {
+    width: 704px;
+  }
   @media (max-width: 600px) {
-    max-width: 300px;
     margin: 1vh auto;
   }
 `;
@@ -39,7 +42,5 @@ const Pagina = styled.div`
   flex-direction: column;
   min-height: 100vh;
   margin: 0 auto;
-  @media (max-width: 500px) {
-  }
 `;
 export default App;
