@@ -19,12 +19,41 @@
 }
 
 .pic:hover {
-  -webkit-filter: brightness(60%);
+  -webkit-filter: brightness(50%);
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.img-modal {
+  margin: 0 auto;
+  width: -webkit-fill-available;
+  object-fit: cover;
+}
+.imgmodal-wrapper {
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+.button-delete {
+  background-color: transparent;
+  border: 1px solid #cf0700 !important;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  height: 33px;
+  width: 100px;
+  margin: 20px auto;
+  transition: 250ms;
+}
+
+.button-delete:hover {
+  font-weight: bold;
+  background-color: #cf0700;
+  color: white;
+  transform: scale(1.05);
 }
 
 @media (max-width: 1020px) {
@@ -46,7 +75,7 @@
     width: -webkit-fill-available;
   }
   .divimgs {
-    margin-top: 220px;
+    margin-top: 175px;
     gap: 3px;
   }
 }

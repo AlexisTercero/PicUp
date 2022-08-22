@@ -57,48 +57,31 @@ function Images(props) {
       <Modal
         style={{
           content: {
-            height: '90vh',
+            margin: '0 auto',
+            height: '40vh',
             backgroundColor: 'transparent',
-            left: '30%',
-            right: '30%',
-            zIndex: '9',
-            border: 'transparent',
+            width: '40vw',
+            height: 'fit-content',
+            border: 'none',
           },
-          overlay: { zIndex: 1000 },
+          overlay: {
+            zIndex: 1000,
+            backgroundColor: 'rgb(0 0 0 / 90%)',
+          },
         }}
         isOpen={modalIsOpen}
         onRequestClose={() => modalHandler(false, null)}
       >
-        {/* <div
-          style={{
-            backgroundColor: 'blue',
-          }}
-          className=""
-        > */}
-        <img
-          src={'http://localhost:9000/' + currentImage}
-          alt="..."
-          style={{
-            margin: '0 auto',
-            width: '-webkit-fill-available',
-          }}
-        />
-        {/* <div
-          style={{
-            backgroundColor: 'green',
-            margin: '0 auto',
-            height: 'auto',
-            width: 'auto',
-            maxHeight: '100%',
-            maxWidth: '100%',
-          }}
-          // className="card-body"
-        > */}
-        <button onClick={() => deleteHandler()} className="btn btn-danger">
-          DELETE
-        </button>
-        {/* </div> */}
-        {/* </div> */}
+        <div className="imgmodal-wrapper">
+          <img
+            src={'http://localhost:9000/' + currentImage}
+            alt="..."
+            className="img-modal"
+          />
+          <button onClick={() => deleteHandler()} className="button-delete">
+            DELETE
+          </button>
+        </div>
       </Modal>
     </Fragment>
   );

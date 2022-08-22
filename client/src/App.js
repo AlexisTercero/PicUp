@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react';
 import NavBar from './components/NavBar';
-// import UploadForm from './components/UploadForm';
 import Images from './components/Images';
 import styled from '@emotion/styled';
 import Footer from './components/Footer';
@@ -13,7 +12,6 @@ function App() {
       <Pagina>
         <NavBar setListUpdated={setListUpdated} />
         <Contenedor>
-          {/* <UploadForm setListUpdated={setListUpdated}></UploadForm> */}
           <Images
             listUpdated={listUpdated}
             setListUpdated={setListUpdated}
@@ -27,7 +25,7 @@ function App() {
 
 const Contenedor = styled.div`
   width: 935px;
-  margin: 3vh auto 7vh;
+  margin: 1vh auto 6vh;
   flex: 1;
   @media (max-width: 1020px) {
     width: 704px;
