@@ -57,43 +57,48 @@ function Images(props) {
       <Modal
         style={{
           content: {
-            height: '800px',
-            backgroundColor: 'black',
-            left: '20%',
-            right: '20%',
+            height: '90vh',
+            backgroundColor: 'transparent',
+            left: '30%',
+            right: '30%',
+            zIndex: '9',
+            border: 'transparent',
           },
+          overlay: { zIndex: 1000 },
         }}
         isOpen={modalIsOpen}
         onRequestClose={() => modalHandler(false, null)}
       >
-        <div
+        {/* <div
           style={{
-            backgroundColor: 'red',
+            backgroundColor: 'blue',
           }}
-          className="card"
-        >
-          <img
-            src={'http://localhost:9000/' + currentImage}
-            alt="..."
-            style={{
-              margin: '0 auto',
-              height: 'auto',
-              width: 'auto',
-              maxHeight: '100%',
-              maxWidth: '100%',
-            }}
-          />
-          <div
-            style={{
-              backgroundColor: 'red',
-            }}
-            className="card-body"
-          >
-            <button onClick={() => deleteHandler()} className="btn btn-danger">
-              DELETE
-            </button>
-          </div>
-        </div>
+          className=""
+        > */}
+        <img
+          src={'http://localhost:9000/' + currentImage}
+          alt="..."
+          style={{
+            margin: '0 auto',
+            width: '-webkit-fill-available',
+          }}
+        />
+        {/* <div
+          style={{
+            backgroundColor: 'green',
+            margin: '0 auto',
+            height: 'auto',
+            width: 'auto',
+            maxHeight: '100%',
+            maxWidth: '100%',
+          }}
+          // className="card-body"
+        > */}
+        <button onClick={() => deleteHandler()} className="btn btn-danger">
+          DELETE
+        </button>
+        {/* </div> */}
+        {/* </div> */}
       </Modal>
     </Fragment>
   );
