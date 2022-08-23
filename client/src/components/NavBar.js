@@ -54,11 +54,7 @@ function NavBar(props) {
                 />
                 Pic...
               </label>
-              <button
-                onClick={sendHandler}
-                type="button"
-                className="btn btn-up"
-              >
+              <button onClick={sendHandler} type="submit" className="btn-up">
                 Up!
               </button>
             </div>

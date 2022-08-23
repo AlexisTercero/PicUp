@@ -44,13 +44,17 @@ function Images(props) {
     <Fragment>
       <div className="divimgs">
         {imageList.map((image) => (
-          <div className="divimg" key={image}>
+          <div
+            className="divimg"
+            key={image}
+            onClick={() => modalHandler(true, image)} //el state cambia a true para que se abra el Modal  y se asigna la imagen cuando se hace click
+          >
             <img
               src={'http://localhost:9000/' + image}
               alt="..."
               className="pic"
-              onClick={() => modalHandler(true, image)} //el state cambia a true para que se abra el Modal  y se asigna la imagen cuando se hace click
             ></img>
+            <p className="img__description">Open!</p>
           </div>
         ))}
       </div>

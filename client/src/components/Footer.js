@@ -30,11 +30,8 @@ const Foot = styled.div`
   font-size: 13px;
   font-weight: bolder;
   letter-spacing: 0.5px;
-
   background-color: black;
   padding-top: 0.3em;
-  padding-left: 9px;
-  padding-right: 9px;
   position: relative;
   bottom: 0;
   width: 100%;

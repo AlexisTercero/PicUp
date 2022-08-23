@@ -37,6 +37,7 @@ input[type='file'] {
 }
 .custom-file-upload {
   width: 140px;
+  font-size: 18px;
   color: rgb(209, 209, 209);
   border: 2px solid rgb(255, 255, 255);
   display: inline-block;
@@ -46,20 +47,28 @@ input[type='file'] {
 }
 
 .custom-file-upload:hover {
-  box-shadow: -3px 0px 5px 3px #2a2a2a78;
+  box-shadow: -3px 0px 5px 3px #ffffff2c;
 }
 
 .btn-up {
+  font-size: 18px;
   width: 60px;
   background-color: white;
   border: 2px solid rgb(255, 255, 255);
   color: black;
   font-weight: bold;
   border-radius: 0 30px 30px 0px;
+  cursor: pointer;
+  height: 37px;
 }
 
 .btn-up:hover {
-  box-shadow: 3px 0px 5px 3px #2a2a2a78;
+  box-shadow: 3px 0px 5px 3px #ffffff2c;
+}
+
+.btn-up:hover::after {
+  transition: all ease 3s;
+  content: '^';
 }
 
 @media (max-width: 1020px) {
