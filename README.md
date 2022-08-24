@@ -43,7 +43,7 @@
 ## 🚀 Instalación:
 
 ```
-$ git clone https://github.com/AlexisTercero/crud_images
+$ git clone https://github.com/AlexisTercero/PicUp.git
 $ npm install
 $ npm start
 ```
