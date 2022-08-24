@@ -7,7 +7,7 @@ const router = express.Router();
 
 const diskstorage = multer.diskStorage({
   destination: path.join(__dirname, '../images'),
-  //determina capeta en donde los archivos son subidos, la carpeta será creada automaticamente por multer.
+  //determina carpeta en donde los archivos son subidos, la carpeta será creada automaticamente por multer.
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-PicUp!-' + file.originalname);
   }, //determina un nombre de archivo unico
@@ -76,7 +76,7 @@ router.delete('/images/delete/:id', (req, res) => {
 
         fs.unlinkSync(
           path.join(__dirname, '../dbimages/' + req.params.id + 'PicUp.png')
-        ); //elimino imagen de la carpeta temporal dbimages
+        ); //elimino imagen de la carpeta dbimages
 
         res.send('image deleted');
       }
