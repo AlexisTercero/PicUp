@@ -9,9 +9,14 @@
 <img src="./PicUp02.png"/>
 </a>
 
-## Descripción:
+## 📄 Descripción:
 
 <p align="center">PicUp! es una app simple, elegante y divertida para subir tus imagenes preferidas a la web...</p>
+
+## 📱 Funcionalidad:
+
+<h3>Carga de imagenes:</h3>
+<p align="left">A la derecha del navbar encontrarás un input donde podrás seleccionar las imagen que quieras subir a PicUp!, dandole click a "Pic..." ser abrira una ventana exploradora para que puedas elegir la imagen desde tu dispositivo, luego de seleccionarla deberás hacer click en el botón "Up!" y listo tu primer imagen ya se encontrará cargada en PicUp!</p>
 
 ## 🛠️ Tecnologías:
 
