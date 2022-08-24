@@ -16,7 +16,7 @@
 ## 📱 Funcionalidad:
 
 <h3>Cargar imagenes:</h3>
-<p align="left">A la derecha del navbar encontrarás un input donde podrás seleccionar la imagen que quieras subir a PicUp!, dandole click a "Pic..." ser abrirá una ventana exploradora para que puedas elegir la imagen desde tu dispositivo, luego de seleccionarla deberás hacer click en el botón "Up!" y listo, tu primer imagen ya se encontrará cargada en PicUp!</p>
+<p align="left">En el navbar encontrarás un input donde podrás seleccionar la imagen que quieras subir a PicUp!, dandole click a "Pic..." ser abrirá una ventana exploradora para que puedas elegir la imagen desde tu dispositivo, luego de seleccionarla deberás hacer click en el botón "Up!" y listo, tu primer imagen ya se encontrará cargada en PicUp!</p>
 
 <h3>Borrar imagenes:</h3>
 <p align="left">Cuando ya tengas al menos una imagen cargada en PicUp! al hacer click sobre su miniatura, la misma se desplegara y podras verla en su tamaño completo, si deseas borrarla debajo de esta encontrarás el botón "DELETE" al cual deberás clickear para proceder con el borrado.</p>
