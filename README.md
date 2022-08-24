@@ -1,6 +1,6 @@
 # <div align="center"> PicUp!</div>
 
-## <a href="...." target="_blank">LIVE DEMO</a>
+## <a href="..." target="_blank">LIVE DEMO</a>
 
 <a href="">
 <img src="./PicUp01.png"/>
