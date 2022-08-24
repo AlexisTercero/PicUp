@@ -9,9 +9,11 @@
 <img src="./PicUp02.png"/>
 </a>
 
+## Descripción:
+
 <p align="center">PicUp! es una app simple, elegante y divertida para subir tus imagenes preferidas a la web...</p>
 
-## 🛠️ Technologies
+## 🛠️ Tecnologías:
 
 <ul>
   <li><a href="https://reactjs.org/">React JS</a></li>
@@ -22,7 +24,7 @@
   <li><a href="https://www.adobe.com/la/products/illustrator.html">Adobe Illustrator</a></li>
 </ul>
 
-## ⚙️ Requirements
+## ⚙️ Requerimientos:
 
 <ul>
   <li><a href="https://git-scm.com/">Git</a></li>
@@ -30,7 +32,7 @@
   <li><a href="https://www.npmjs.com/">NPM</a></li>
 </ul>
 
-## 🚀 Installation
+## 🚀 Instalación:
 
 ```
 $ git clone https://github.com/AlexisTercero/crud_images
