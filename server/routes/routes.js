@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer'); //requiero multer,middleware maneja data para subir archivos.
 const path = require('path'); //requiero modulo path para usar el metodo join() para unir dos rutas
-const fs = require('fs'); // requiero fs para leer el archivo y poder mandarlo a la base de datos
+const fs = require('fs'); // requiero  fs para leer el archivo y poder mandarlo a la base de datos
 
 const router = express.Router();
 
