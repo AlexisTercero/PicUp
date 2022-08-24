@@ -1,4 +1,4 @@
-# <div align="center"> PicUp! 📋</div>
+# <div align="center"> PicUp!</div>
 
 ## <a href="..." target="_blank">LIVE DEMO</a>
 
